@@ -1,11 +1,15 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive/hive.dart';
 
-void main() {
+void main() async{
   runApp(const BooklyApp());
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox(kFeaturedBox);
 }
 
 class BooklyApp extends StatelessWidget {
@@ -22,7 +26,7 @@ class BooklyApp extends StatelessWidget {
       ),
     );
 
-    // -- Get -- طريقة استخدام 
+    // -- Get -- طريقة استخدام
 
     // GetMaterialApp(
     //   debugShowCheckedModeBanner: false,
