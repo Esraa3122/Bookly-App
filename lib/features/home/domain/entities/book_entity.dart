@@ -6,6 +6,7 @@ class BookEntity {
     this.price,
     this.rating,
   );
+  
   final String image;
   final String title;
   final String authorName;
