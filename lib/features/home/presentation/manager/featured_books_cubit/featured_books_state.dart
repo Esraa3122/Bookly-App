@@ -11,11 +11,11 @@ class FeaturedBooksFailure extends FeaturedBooksState {
   final String errMessage;
 
   FeaturedBooksFailure(this.errMessage);
+  
 }
 
 class FeaturedBooksSuccess extends FeaturedBooksState {
   final List<BookEntity> books;
-
   FeaturedBooksSuccess(this.books);
 
 }
